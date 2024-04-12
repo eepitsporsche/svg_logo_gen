@@ -12,12 +12,12 @@ function logoDesignPrompts() {
         name: "text",
         message: "Enter one to three characters for your logo:",
         validate: (input) => {
-            const charLength = input.length <= 3;
-            const charInput = input.trim() !== "";
-            if (!charLength) {
+            const textLength = input.length <= 3;
+            const textInput = input.trim() !== "";
+            if (!textLength) {
                 return "One to three characters are allowed. Enter characters for your logo:";
             }
-            if (!charInput) {
+            if (!textInput) {
                 return "One to three characters are required. Enter characters for your logo:";
             }
             return true;
@@ -27,7 +27,7 @@ function logoDesignPrompts() {
         //Font Color
         {
             type: "input",
-            name: "fontColor",
+            name: "textColor",
             message: "Enter the color name or hexadecimal number for your logo's characters:",
         },
 
@@ -55,7 +55,45 @@ function logoDesignPrompts() {
 
 //Saves user input
  function saveUserInput(fileName, answers) {
-    
- }
+    //Create empty string for generated logo
+    let svgCode = "";
 
+    //Define SVG dimensions
+    svgCode = '<svg version "1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">';
+
+    //Group tag to bind logo characters and shape together
+    svgCode += '<g>';
+
+    //Apply shape selected by user
+    svgCode += `${answers.shape}`;
+
+    //Define shape parameters for circle, triangle, and square options
+    let shapeSelected;
+    if (answers.shape === "Circle") {
+        shapeSelected = new Circle();
+        svgCode += '<circle cx="150" cy="100" r="80" fill="${answers.shapeColor}"/>'
+    } else 
+    if (answers.shape === "Triangle") {
+        shapeSelected = new Triangle();
+        svgCode += '<polygon points="150, 18 244, 182 56, 182" fill="${answers.shapeColor}"/>'
+    } else {
+            shapeSelected = new Square();
+            svgCode += '<rect x="50" y="50" width="200" height="100" fill="${answers.shapeColor}"/>'
+    }
+
+    //Apply text selected by user
+    svgCode += `<text x="150" y="125" text-anchor="middle" font-size="50" fill="${answers.textColor}">${answers.text}</text>`;
+
+    //Closing tags for SVG code
+    svgCode += '</g>';
+    svgCode += '</svg>';
+
+    //Write generated SVG code to new svg file
+    fs.writeFile(fileName, svgCode, (err) => {
+        //Ternary operator to either log an error or produce success message in the terminal
+        err ? console.log(err) : console.log("New SVG logo has been created.")
+    })
+    }
+
+//Function call to intialize app:
 logoDesignPrompts();
