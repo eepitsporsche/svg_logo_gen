@@ -1,5 +1,9 @@
+//Required Node Modules
 const inquirer = require("inquirer");
-const fs = requie("fs");
+const fs = require("fs");
+
+//Import shape classes from shapes.js
+const { Circle, Triangle, Square } = require("./lib/shapes");
 
 //User prompts for logo design parameters
 function logoDesignPrompts() {
