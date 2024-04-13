@@ -8,7 +8,7 @@ const { Circle, Triangle, Square } = require("./lib/shapes");
 //User prompts for logo design parameters
 function logoDesignPrompts() {
     inquirer
-    .createPromptModule([
+    .prompt([
         
         //Characters *ONE TO THREE REQUIRED*
         {
@@ -63,7 +63,7 @@ function logoDesignPrompts() {
     let svgCode = "";
 
     //Define SVG dimensions
-    svgCode = '<svg version "1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">';
+    svgCode = '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">';
 
     //Group tag to bind logo characters and shape together
     svgCode += '<g>';
@@ -75,18 +75,26 @@ function logoDesignPrompts() {
     let shapeSelected;
     if (answers.shape === "Circle") {
         shapeSelected = new Circle();
-        svgCode += '<circle cx="150" cy="100" r="80" fill="${answers.shapeColor}"/>'
+        //Apply circle rendering parameters
+        svgCode += `<circle cx="150" cy="100" r="80" fill="${answers.shapeColor}"/>`;
+        //Apply text selected by user
+        svgCode += `<text x="150" y="115" text-anchor="middle" font-size="50" fill="${answers.textColor}">${answers.text}</text>`;
     } else 
     if (answers.shape === "Triangle") {
         shapeSelected = new Triangle();
-        svgCode += '<polygon points="150, 18 244, 182 56, 182" fill="${answers.shapeColor}"/>'
+        //Apply triangle rendering parameters
+        svgCode += `<polygon points="150, 18 244, 182 56, 182" fill="${answers.shapeColor}"/>`;
+        //Apply text selected by user
+        svgCode += `<text x="150" y="160" text-anchor="middle" font-size="50" fill="${answers.textColor}">${answers.text}</text>`;
     } else {
             shapeSelected = new Square();
-            svgCode += '<rect x="50" y="50" width="200" height="100" fill="${answers.shapeColor}"/>'
+            //Apply square rendering parameters
+            svgCode += `<rect x="50" y="50" width="175" height="175" fill="${answers.shapeColor}"/>`;
+            //Apply text selected by user
+            svgCode += `<text x="140" y="140" text-anchor="middle" font-size="50" fill="${answers.textColor}">${answers.text}</text>`;
     }
 
-    //Apply text selected by user
-    svgCode += `<text x="150" y="125" text-anchor="middle" font-size="50" fill="${answers.textColor}">${answers.text}</text>`;
+
 
     //Closing tags for SVG code
     svgCode += '</g>';
