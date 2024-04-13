@@ -28,11 +28,11 @@ function logoDesignPrompts() {
         },
         },
 
-        //Font Color
+        //Text Color
         {
             type: "input",
             name: "textColor",
-            message: "Enter the color name or hexadecimal number for your logo's characters:",
+            message: "Enter the color name or hexadecimal code for your logo's characters:",
         },
 
         //Shape
@@ -63,7 +63,11 @@ function logoDesignPrompts() {
     let svgCode = "";
 
     //Define SVG dimensions
+    if (answers.text !== "ILY") {
     svgCode = '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">';
+    } else {
+        svgCode = '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">'
+    }
 
     //Group tag to bind logo characters and shape together
     svgCode += '<g>';
@@ -73,6 +77,17 @@ function logoDesignPrompts() {
 
     //Define shape parameters for circle, triangle, and square options
     let shapeSelected;
+    if (answers.shape === "Circle" && answers.text === "ILY") {
+        shapeSelected = new Circle();
+        //Apply easter egg heart rendering parameters
+        svgCode += `<path d="M 10,30 
+                 A 20,20 0,0,1 50,30 
+                 A 20,20 0,0,1 90,30 
+                 Q 90,60 50,90 
+                 Q 10,60 10,30 z" fill="${answers.shapeColor}"/>`;
+        //Apply text selected by user
+        svgCode += `<text x="52" y="60" text-anchor="middle" font-size="30" fill="${answers.textColor}">${answers.text}</text>`;
+    } else 
     if (answers.shape === "Circle") {
         shapeSelected = new Circle();
         //Apply circle rendering parameters

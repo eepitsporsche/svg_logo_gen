@@ -1,1 +1,5 @@
-<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><g>Circle<circle cx="150" cy="100" r="80" fill="#10848D"/><text x="150" y="115" text-anchor="middle" font-size="50" fill="#8D2610">PCH</text></g></svg>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g>Circle<path d="M 10,30 
+                 A 20,20 0,0,1 50,30 
+                 A 20,20 0,0,1 90,30 
+                 Q 90,60 50,90 
+                 Q 10,60 10,30 z" fill="pink"/><text x="52" y="60" text-anchor="middle" font-size="30" fill="yellow">ILY</text></g></svg>
