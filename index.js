@@ -84,7 +84,7 @@ function logoDesignPrompts() {
                  A 20,20 0,0,1 50,30 
                  A 20,20 0,0,1 90,30 
                  Q 90,60 50,90 
-                 Q 10,60 10,30 z" fill="${answers.shapeColor}"/>`;
+                 Q 10,60 10,30 z" stroke="red" fill="${answers.shapeColor}"/>`;
         //Apply text selected by user
         svgCode += `<text x="52" y="58" text-anchor="middle" font-size="30" fill="${answers.textColor}">${answers.text}</text>`;
     } else 

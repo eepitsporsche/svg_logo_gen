@@ -1,1 +1,61 @@
-# svg_shape_gen
+# SVG Logo Generator
+
+## Table of Contents
+
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [Technologies Used](#technologies-used)
+* [License](#license)
+
+## Description
+The SVG Logo Generator provides users with an easy-to-use program to create a custom SVG logo. User input taken from a series of prompts is applied to the program to produce an SVG logo using either a circle, triangle, or square shape.
+
+Future development for this app could include additional design parameters for the user to choose from to produce non-standard shapes and custom color preferences such as borders and opacity.
+
+> :memo: **Easter Egg:** Entering "ILY" and choosing the circle shape will generate a fun surpirse!
+
+## Installation
+* [Inquirer v8.2.4](https://www.npmjs.com/package/inquirer/v/8.2.4) must be installed to operate this app.
+* [Jest](https://jestjs.io/docs/getting-started) must be installed to operate testing for this app.
+* [VS Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) is required to open the logo.svg via the live server.
+
+## Usage
+[Clone the repository](https://github.com/eepitsporsche/svg_logo_gen) to your machine and open the application in VS Code.
+
+<p align="center"><img src="./assets/images/svg_logo_generator_github_repo.jpg" alt="SVG Logo Generator GitHub Repo"></p>
+
+To initiate the SVG Logo Generator, enter the <code>node index.js</code> command into the index.js terminal.
+
+<p align="center"><img src="./assets/images/svg_logo_generator_terminal_demo.jpg" alt="SVG Logo Generator Terminal Demo"></p>
+
+After answering the prompts, an SVG file entitled "logo.svg" with the user's response parameters applied will be created.
+Opening the file via the live server will allow you to view the generated logo.svg.
+
+<p align="center"><img src="./examples/svg_logo_generator_new_logo.jpg" alt="New logo.svg Created by the SVG Logo Generator"></p>
+
+To initiate the testing of the SVG Logo Generator, enter the <code>npm test</code> command into the terminal.
+
+<p align="center"><img src="./assets/images/svg_logo_generator_test_demo.jpg" alt="SVG Logo Generator Terminal Test Demo"></p>
+
+[Click here](https://drive.google.com/file/d/1jeSethZNHqkaDba_ocOdXwIx39oQB7Pl/view?usp=sharing) to view the video walk-through.
+
+
+## Credits
+* [mdn web docs_](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering) for information on SVG shape-rendering
+* [w3 Schools](https://www.w3schools.com/graphics/svg_intro.asp) for information on SVG
+* UCB Bootcamp provided guidance for directory structure and test function framework for this project.
+
+
+## Technologies Used
+* VS Code
+* JavaScript
+* Node.js
+* Inquirer
+
+
+## License
+N/A
+
+### <p align="center">[Back to Top](#svg-logo-generator)</p>
