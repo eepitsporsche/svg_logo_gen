@@ -14,7 +14,7 @@ The SVG Logo Generator provides users with an easy-to-use program to create a cu
 
 Future development for this app could include additional design parameters for the user to choose from to produce non-standard shapes and custom color preferences such as borders and opacity.
 
-> :memo: **Easter Egg:** Entering "ILY" and choosing the circle shape will generate a fun surpirse!
+> 📝 **Easter Egg:** Entering "ILY" and choosing the circle shape will generate a fun surpirse!
 
 ## Installation
 * [Inquirer v8.2.4](https://www.npmjs.com/package/inquirer/v/8.2.4) must be installed to operate this app.
