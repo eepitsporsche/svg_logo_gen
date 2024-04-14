@@ -66,7 +66,7 @@ function logoDesignPrompts() {
     if (answers.text !== "ILY") {
     svgCode = '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">';
     } else {
-        svgCode = '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">'
+        svgCode = '<svg viewBox="0 0 100 100" width="300" height="200" xmlns="http://www.w3.org/2000/svg">'
     }
 
     //Group tag to bind logo characters and shape together
@@ -86,7 +86,7 @@ function logoDesignPrompts() {
                  Q 90,60 50,90 
                  Q 10,60 10,30 z" fill="${answers.shapeColor}"/>`;
         //Apply text selected by user
-        svgCode += `<text x="52" y="60" text-anchor="middle" font-size="30" fill="${answers.textColor}">${answers.text}</text>`;
+        svgCode += `<text x="52" y="58" text-anchor="middle" font-size="30" fill="${answers.textColor}">${answers.text}</text>`;
     } else 
     if (answers.shape === "Circle") {
         shapeSelected = new Circle();
@@ -110,15 +110,14 @@ function logoDesignPrompts() {
     }
 
 
-
     //Closing tags for SVG code
     svgCode += '</g>';
     svgCode += '</svg>';
 
     //Write generated SVG code to new svg file
     fs.writeFile(fileName, svgCode, (err) => {
-        //Ternary operator to either log an error or produce success message in the terminal
-        err ? console.log(err) : console.log("New SVG logo has been created.")
+        //Ternary operator to either log an error or print success message in the terminal
+        err ? console.log(err) : console.log("New logo.svg has been generated.")
     })
     }
 
