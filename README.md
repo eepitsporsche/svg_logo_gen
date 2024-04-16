@@ -20,7 +20,7 @@ Future development for this app could include additional design parameters for t
 ## Installation
 * [Inquirer v8.2.4](https://www.npmjs.com/package/inquirer/v/8.2.4) must be installed to operate this app.
 * [Jest](https://jestjs.io/docs/getting-started) must be installed to operate testing for this app.
-* [VS Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) is required to open the logo.svg via the live server.
+* [VS Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) is required to open the logo.svg via the browser.
 
 ## Usage
 [Clone the repository](https://github.com/eepitsporsche/svg_logo_gen) to your machine and open the application in VS Code.
@@ -40,12 +40,13 @@ To initiate the testing of the SVG Logo Generator, enter the <code>npm test</cod
 
 <p align="center"><img src="./assets/images/svg_logo_generator_test_demo.jpg" alt="SVG Logo Generator Terminal Test Demo"></p>
 
-[Click here](https://drive.google.com/file/d/1jeSethZNHqkaDba_ocOdXwIx39oQB7Pl/view?usp=sharing) to view the video walk-through.
+> [Click here](https://drive.google.com/file/d/1jeSethZNHqkaDba_ocOdXwIx39oQB7Pl/view?usp=sharing) to view the video walk-through.
 
 
 ## Credits
 * [mdn web docs_](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering) for information on SVG shape-rendering
 * [w3 Schools](https://www.w3schools.com/graphics/svg_intro.asp) for information on SVG
+* [Sanjay Chopra Youtube Channel](https://www.youtube.com/watch?v=m9oC3wo6JW4) for example walk-through
 * UCB Bootcamp provided guidance for directory structure and test function framework for this project.
 
 
